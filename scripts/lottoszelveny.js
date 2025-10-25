@@ -1,0 +1,1 @@
+//üres mert a lottoszelveny.php-ban van benne

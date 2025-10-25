@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../img/szf_lotto3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main {
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    padding-bottom: 50px;
+}
+
+#menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+    transition: 0.5s;
+    display: none;
+}
+
+#menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    background-color: transparent;
+    transition: width 1s, background-color 0.5s;
+    z-index: 1;
+}
+
+#menu-container.open {
+    width: 15%;
+    background-color: #97cd72;
+    transition: width 0.1s;
+    z-index: 3;
+}
+
+#menu-container.open #menu {
+    display: block;
+    z-index: 3;
+}
+
+.menu-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 2;
+    user-select: none;
+    transition: color 0.5s;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+    transition: background-color 0.5s;
+}
+
+.menu-icon:hover .bar {
+    background-color: white;
+}
+
+.menu-icon:hover:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+nav a {
+    width: auto;
+    display: block;
+    padding: 10px 20px 10px 40px;
+    text-decoration: none;
+    color: white;
+    text-align: left;
+    margin-left: 10px;
+    z-index: 3;
+}
+
+nav a:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.link {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    background: #97cd72;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100px;
+    border: 4px solid #97cd72;
+    margin-right: 5px;
+    background-color: white;
+}
+
+td, th {
+    border: 2px solid #97cd72;
+    text-align: center;
+    padding: 5px;
+    height: 10px;
+    font-size: 15px;
+    background-color: white;
+}
+
+
+
+.submit-button {
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #97cd72;
+    color: white;
+}
+
+footer {
+    position: fixed;
+    text-align: center;
+    background-color: #97cd72;
+    bottom: 0;
+    width: 100%;
+}
+
+.submit-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+	
+}
+
+
+.table-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.table-container table{
+	margin: 2px;
+}
+
+
+@media screen and (max-width: 600px) {
+    #menu-container.open {
+        width: 100%;
+    }
+    .menu-icon .bar {
+        width: 16px;
+    }
+    nav a {
+        padding: 5px 10px 5px 20px;
+    }
+    .link {
+        padding: 5px;
+    }
+}

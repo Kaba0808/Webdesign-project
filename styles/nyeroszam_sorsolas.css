@@ -1,0 +1,227 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: white;
+    background-image: url('../img/szf_lotto3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+.bold-italic{
+    font-weight: bold;
+    font-style: italic;
+}
+
+#menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+    transition: 0.5s;
+    display: none;
+}
+
+#menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px; 
+    height: 100%;
+    background-color: transparent; 
+    transition: width 1s, background-color 0.5s;
+    z-index: 1;
+}
+
+#menu-container.open {
+    width: 15%; 
+    background-color: rgb(76, 0, 130); 
+    transition: width 0.1s;
+    z-index: 3;
+}
+
+#menu-container.open #menu {
+    display: block; 
+    z-index: 3;
+}
+
+.menu-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 2;
+    user-select: none;
+    transition:  color 0.5s;
+}
+
+.menu-icon .bar {
+    width: 24px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+    transition: background-color 0.5s;
+}
+
+.menu-icon:hover .bar {
+    background-color: white;
+}
+
+.menu-icon:hover:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+nav a {
+    width: auto;
+    display: block;
+    padding: 10px 20px 10px 40px;
+    text-decoration: none;
+    color: white;
+    text-align: left;
+    margin-left: 10px;
+    z-index: 3;
+}
+
+nav a:hover {
+    background-color: #4B0082; 
+    color: #ccc;
+    cursor: pointer;
+}
+
+.link {
+    display: block;
+    padding: 10px ;
+    text-decoration: none;
+    background: rgb(76, 0, 130);
+    color: white;
+    text-decoration: none;
+}
+
+#header-content {
+    border: 5px outset #ccc;
+    border-radius: 2px;
+    text-align: center;
+    margin-left: 450px;
+    margin-right: 450px;
+    display: flex;
+    background-color: rgba(240, 248, 255, 0.763);
+}
+
+h1 {
+    text-align: center; 
+    margin: auto; 
+    width: 50%; 
+    display: block;
+}
+
+header {
+    position: relative;
+    color:rgba(75, 0, 130, 0.9) ;
+    padding: 1px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #8B008B ; 
+    transition: background-color 0.5s, color 0.5s;
+    position: fixed;
+    top: 50%;
+    left: 50%; 
+    font-size: 24px;
+    font-weight: bold;
+    border: 2px solid #8B008B;
+    color: #333;
+    height: 15%;
+    width: 300px;
+    transform: translate(-50%, -50%);
+    margin-top: 150px;
+}
+
+button:hover, .number:hover {
+    background-color: #8B008B;
+    transition: background-color 1.5s;
+    color: white;
+    cursor: pointer;
+}
+
+button:focus, .number:focus {
+    outline: none;
+}
+
+.number {
+	background-color: rgba(255, 255, 255, 0.8);
+    color: #8B008B ; 
+    transition: background-color 0.5s, color 0.5s;
+    position: fixed;
+    top: 50%;
+    left: 50%; 
+    font-size: 24px;
+    font-weight: bold;
+    border: 2px solid #8B008B;
+    color: #333;
+    height: 7%;
+    width: 250px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+    margin-bottom: 250px;
+	text-align: center;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgb(76, 0, 130);
+}
+
+@media screen and (max-width: 600px) {
+    #menu-container.open {
+        width: 100%;
+    }
+    .menu-icon .bar {
+        width: 16px;
+    }
+    nav a {
+        padding: 5px 10px 5px 20px;
+    }
+    .link {
+        padding: 5px;
+    }
+    #header-content {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 15px;
+    }
+    h1 {
+        width: 90%;
+    }
+    .content {
+        margin: 10px 10px auto 10px;
+        font-size: 15px;
+    }
+    button {
+        font-size: 12px;
+        height: 15%;
+        width: 10%;
+    }
+    footer {
+        font-size: 12px;
+    }
+}

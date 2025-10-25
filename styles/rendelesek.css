@@ -1,0 +1,188 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    background-image: url('../img/szf_lotto3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main{
+    margin-bottom: 100px;
+}
+
+table tr td:nth-of-type(4) {
+    background-color: white;
+}
+
+#menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+    transition: 0.5s;
+    display: none;
+}
+
+#menu-container {
+position: fixed;
+top: 0;
+left: 0;
+width: 100px; 
+height: 100%;
+background-color: transparent; 
+transition: width 1s, background-color 0.5s;
+z-index: 1;
+}
+
+#menu-container.open {
+width: 15%; 
+background-color: rgb(76, 0, 130); 
+transition: width 0.1s;
+z-index: 3;
+}
+
+#menu-container.open #menu {
+display: block; 
+z-index: 3;
+}
+
+.menu-icon {
+position: absolute;
+top: 20px;
+left: 20px;
+cursor: pointer;
+z-index: 2;
+user-select: none;
+transition:  color 0.5s;
+}
+
+.menu-icon .bar {
+width: 24px;
+height: 3px;
+background-color: black;
+margin: 5px 0;
+transition: background-color 0.5s;
+}
+
+.menu-icon:hover .bar {
+background-color: white;
+}
+
+.menu-icon:hover:before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+nav a {
+width: auto;
+display: block;
+padding: 10px 20px 10px 40px;
+text-decoration: none;
+color: white;
+text-align: left;
+margin-left: 10px;
+z-index: 3;
+}
+
+nav a:hover {
+background-color: #4B0082; 
+color: #ccc;
+cursor: pointer;
+}
+
+.link {
+display: block;
+padding: 10px ;
+text-decoration: none;
+background: rgb(76, 0, 130);
+color: white;
+text-decoration: none;
+}
+
+.container {
+width: 80%;
+display: flex;
+justify-content: center;
+}
+
+.table-container{
+    overflow-y: auto;
+    margin-top: 50px;
+}
+
+table {
+width: 600px;
+margin-top: 20px;
+margin-left: 450px;
+border-collapse: collapse;
+}
+
+table th, table td {
+text-align: center;
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ddd;
+}
+
+table th {
+background-color: #4B0082;
+color: white;
+}
+
+table tfoot th {
+background-color: #333;
+color: #ccc;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgb(76, 0, 130);
+}
+
+@media screen and (max-width: 600px) {
+    #menu-container.open {
+        width: 100%;
+    }
+    .menu-icon .bar {
+        width: 16px;
+    }
+    nav a {
+        padding: 5px 10px 5px 20px;
+    }
+    .link {
+        padding: 5px;
+    }
+    #header-content {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 15px;
+    }
+    h1 {
+        width: 90%;
+    }
+    .content {
+        margin: 10px 10px auto 10px;
+        font-size: 15px;
+    }
+    button {
+        font-size: 12px;
+        height: 15%;
+        width: 10%;
+    }
+    footer {
+        font-size: 12px;
+    }
+}

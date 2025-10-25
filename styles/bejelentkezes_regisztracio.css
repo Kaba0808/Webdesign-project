@@ -1,0 +1,214 @@
+body {
+    margin: 0;
+    min-height: auto; 
+    display: flex;
+    flex-direction: column;
+	font-family: Arial, sans-serif;
+    background-image: url('../img/szf_lotto3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	text-align: center;
+}
+
+#menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+    transition: 0.5s;
+    display: none;
+}
+
+#menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px; 
+    height: 100%;
+    background-color: transparent; 
+    transition: width 1s, background-color 0.5s;
+    z-index: 1;
+}
+
+#menu-container.open {
+    width: 15%; 
+    background-color: #97cd72; 
+    transition: width 1s;
+    z-index: 3;
+}
+
+#menu-container.open #menu {
+    display: block; 
+    z-index: 3;
+}
+
+.menu-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 2;
+    user-select: none;
+    transition:  color 0.5s;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+    transition: background-color 0.5s;
+}
+
+.menu-icon:hover .bar {
+    background-color: white;
+}
+
+.menu-icon:hover:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+nav a {
+    width: auto;
+    display: block;
+    padding: 10px 20px 10px 40px;
+    text-decoration: none;
+    color: white;
+    text-align: left;
+    margin-left: 10px;
+    z-index: 3;
+}
+
+nav a:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.link {
+    display: block;
+    padding: 10px ;
+    text-decoration: none;
+    background: #97cd72;
+    color: white;
+    text-decoration: none;
+}
+
+	h1 {
+    position: absolute;
+    top: 0;
+    left: 49%;
+    width: 635px;
+    margin-left: -300px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+       
+form {
+	margin-top: 75px;
+	margin-bottom: 50px;
+    width: 600px; 
+    border: 1px solid #ccc;
+    border-radius: 10px;
+	background-color: #f2f2f2; 
+	padding: 20px; 
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);        
+}
+
+legend {
+    font-size: 24px; 
+    font-weight: bold;
+    margin-bottom: 20px;
+
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px; 
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #007bff;
+		
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 4;
+}
+
+input[type="submit"]:hover {
+    background-color: #97cd72;
+}
+		
+		
+input[type="checkbox"] {
+    float: left;
+    margin-right: 10px;
+    z-index: 4;
+}
+
+form img {
+    position: absolute;
+    width: 120px;
+    height: 115px;
+    top: 52px;
+    right: 990px;
+    margin-bottom: 25px;
+}
+		
+footer {
+    position: fixed;
+    text-align: center;
+    background-color: #97cd72;
+    bottom: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    #menu-container.open {
+        width: 100%;
+    }
+    .menu-icon .bar {
+        width: 16px;
+    }
+    nav a {
+        padding: 5px 10px 5px 20px;
+    }
+    .link {
+        padding: 5px;
+    }
+    h1 {
+        font-size: 18px;
+        text-align: center;
+    }
+}
